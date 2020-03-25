@@ -5,6 +5,6 @@
 
 ### Commands
 
-**!help** → gives you a list of all available commands 
+**;help** → gives you a list of all available commands 
 
 
