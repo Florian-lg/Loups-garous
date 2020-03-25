@@ -1,7 +1,7 @@
-module.exports = class GuildStuff {
+export default class GuildActions {
 
     /**
-     * 
+     * @param {Message} message
      * @param {String} name 
      * @param {String} type 
      * @param {String} parent 
@@ -21,10 +21,14 @@ module.exports = class GuildStuff {
 
     /**
      * 
-     * @param {String} message 
+     * @param {Message} message 
      * @param {String} name of the channel
      */
-    deleteVoiceChannel(message, name) {
-        //message.guild.channels.remove();
+    deleteVoiceChannel(message) {
+        console.log(message.guild.channels.resolve('692465313438236772'));
+
+        // if (command === 'delete') {
+        //     fetchedChannel.delete();
+        // }
     }
 }

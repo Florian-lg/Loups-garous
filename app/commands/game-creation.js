@@ -1,8 +1,8 @@
-const Command = require('../../command');
-const Discord = require('discord.js');
-const Guildstuff = require('./guild-stuff');
+import Discord from 'discord.js';
+import Command from './command'
+import ChannelActions from '../actions/channel-actions';
 
-module.exports = class GameCreation extends Command {
+export default class GameCreation extends Command {
 
     static match(message) {
         return message.content.startsWith(';new');
@@ -11,6 +11,8 @@ module.exports = class GameCreation extends Command {
     static action(message) {
         
         const msg = '[React with 👌 to join the game]; Currently playing :';
+        const channelAction = new ChannelActions();
+
         message.channel.send(msg)
             .then(messageReaction => {
                 const filter = (reaction, user) => {
@@ -29,10 +31,11 @@ module.exports = class GameCreation extends Command {
                     });
                 });
 
-                reactionCollector.on('end', () => message.channel.send('Game starts now'));
-            });
-            
-            const setup = new GuildStuff();
-            setup.createVoiceChannel(message, "Loups garous 🐺", "voice",  "690560401091592254");
+                reactionCollector.on('end', () => {
+                    message.channel.send('Game starts now');
+                    channelAction.createVoiceChannel(message, "Loups garous 🐺", "voice",  "690560401091592254");
+                });
+            })
+            .catch(() => console.error);        
     }
 }
