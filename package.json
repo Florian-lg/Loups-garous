@@ -1,0 +1,24 @@
+{
+  "name": "loups-garous",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Florian-lg/Loups-garous.git"
+  },
+  "author": "Le gars florian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Florian-lg/Loups-garous/issues"
+  },
+  "homepage": "https://github.com/Florian-lg/Loups-garous#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "discord.js": "^12.0.2",
+    "sqlite3": "^4.1.1"
+  }
+}
